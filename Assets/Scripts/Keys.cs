@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(Renderer))]
 public class Keys : MonoBehaviour
 {
-    enum Key : byte 
+    public enum KeyType : byte 
     {   
         red, 
         green, 
         blue 
     }
 
-    [SerializeField] Key key;
+    public KeyType keyType;
 
-    [SerializeField] Texture[] keysTexture;
+    public Texture[] keysTexture;
 
     void Update()
     {
@@ -23,18 +23,18 @@ public class Keys : MonoBehaviour
 
     void KeysTexture()
     {
-        Material keys = gameObject.GetComponent<Renderer>().material;
+        Material keysMaterial = gameObject.GetComponent<Renderer>().material;
        
-        switch (key)
+        switch (keyType)
         {
-            case Key.red:
-                keys.SetTexture("_MainTex", keysTexture[0]);
+            case KeyType.red:
+                keysMaterial.SetTexture("_MainTex", keysTexture[0]);
                 break;
-            case Key.green:
-                keys.SetTexture("_MainTex", keysTexture[1]);
+            case KeyType.green:
+                keysMaterial.SetTexture("_MainTex", keysTexture[1]);
                 break;
-            case Key.blue:
-                keys.SetTexture("_MainTex", keysTexture[2]);
+            case KeyType.blue:
+                keysMaterial.SetTexture("_MainTex", keysTexture[2]);
                 break;            
         }
     }

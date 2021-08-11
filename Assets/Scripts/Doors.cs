@@ -5,36 +5,40 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(Renderer))]
 public class Doors : MonoBehaviour
 {
-    enum  DoorLock : byte 
+    public static int totalGreenDoor =0;
+    public enum  DoorLock : byte 
     { 
         red, 
         green, 
         blue
-    } 
+    }
 
-    [SerializeField] DoorLock doorLock;
- 
-    
+    public DoorLock doorLock;
+
+    Material colorDoor;
+
     void Start()
     {
-        DoorColors();
+        colorDoor = gameObject.GetComponent<Renderer>().material; 
     }
 
-    void DoorColors()
+    public void DoorColors(bool yes = true)
     {
-        Material colorDoor = gameObject.GetComponent<Renderer>().material;
-        
-        switch (doorLock)
+        if (yes)
         {
-            case DoorLock.red:
-                colorDoor.color = Color.red;                
-                break;
-            case DoorLock.green:
-                colorDoor.color = Color.green;
-                break;
-            case DoorLock.blue:
-                colorDoor.color = Color.blue;
-                break;          
+            totalGreenDoor++;
+            colorDoor.color = Color.green;
+            GetComponent<Collider>().enabled=false;
         }
+        else StartCoroutine(RedDoor());
     }
+
+    IEnumerator RedDoor()
+    {
+        colorDoor.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        colorDoor.color = Color.white;
+    }
+
 }
+

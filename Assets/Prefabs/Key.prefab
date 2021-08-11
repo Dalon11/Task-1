@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc4eba17aa93074ebfa09e16c7bde0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 2
+  keyType: 2
   keysTexture:
   - {fileID: 2800000, guid: fb8d803007d1fe44e8bc1465579c6b26, type: 3}
   - {fileID: 2800000, guid: 3323b8478849a3845867363e30253fb2, type: 3}

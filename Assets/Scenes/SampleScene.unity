@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: key
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 279057498, guid: a572cc40c52671143bcc68699425796f, type: 3}
+      propertyPath: keyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6805767137352019702, guid: a572cc40c52671143bcc68699425796f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -449,6 +453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378609443}
     m_Modifications:
+    - target: {fileID: 357669944, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
+      propertyPath: doorLock
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6928031458730985040, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -496,6 +504,10 @@ PrefabInstance:
     - target: {fileID: 6928031458730985045, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
       propertyPath: m_Name
       value: Door 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928031458730985045, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
@@ -724,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6928031458730985045, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
 --- !u!1001 &6372439689539440458
@@ -733,26 +749,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6372439690199458361, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372439690199458361, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372439690199458361, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372439690199458361, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372439690381941608, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: speed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6372439690381941611, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -771,7 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372439690381941612, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.52
+      value: -12.91
       objectReference: {fileID: 0}
     - target: {fileID: 6372439690381941612, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -801,14 +797,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6372439690381941613, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_Drag
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372439690381941613, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c27e383a644a70846b16b1831c6113c0, type: 3}
 --- !u!1001 &6805767137610103470
@@ -820,6 +808,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 279057498, guid: a572cc40c52671143bcc68699425796f, type: 3}
       propertyPath: key
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279057498, guid: a572cc40c52671143bcc68699425796f, type: 3}
+      propertyPath: keyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6805767137352019702, guid: a572cc40c52671143bcc68699425796f, type: 3}
@@ -879,10 +871,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378609443}
     m_Modifications:
-    - target: {fileID: 357669944, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
-      propertyPath: doorLock
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6928031458730985040, guid: 32532983c1488ea44bf18ad9a0a946ea, type: 3}
       propertyPath: m_RootOrder
       value: 1
