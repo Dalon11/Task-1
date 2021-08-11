@@ -36,7 +36,7 @@ public class Items : MonoBehaviour
         if (hitKey.collider != null)
         {
             gameCanvas.ImageButtonE();
-            if (Input.GetKeyDown(KeyCode.E) && (!keys[0] || !keys[1]))
+            if (Input.GetKeyDown(KeyCode.E))
             {
 
                 var key= hitKey.transform.gameObject;
@@ -61,44 +61,38 @@ public class Items : MonoBehaviour
     }
     void UseDoor()
     {
-        Ray ray = Camera.main.ScreenPointToRay(rayCameraCenter);
-        Physics.Raycast(ray, out RaycastHit hitDoor, rayDistance, doorLayerMask);
-        if (hitDoor.collider != null && useKey)
+        if (useKey)
         {
-            gameCanvas.ImageButtonE();
-            if (Input.GetKeyDown(KeyCode.E))
+            Ray ray = Camera.main.ScreenPointToRay(rayCameraCenter);
+            Physics.Raycast(ray, out RaycastHit hitDoor, rayDistance, doorLayerMask);
+            if (hitDoor.collider != null)
             {
-                var door = hitDoor.transform.GetComponent<Doors>();
-                var useKeyType = useKey.GetComponent<Keys>();
-                if ((int)door.doorLock == (int)useKeyType.keyType) door.DoorColors();
-                else  door.DoorColors(false);
-
-
-
-                //if(useKey.name == keys[0].name && !keys[0])
-                //{
-                //    gameCanvas.DropUseItem(0);
-                //    Destroy(keys[0]);
-                //    keys[0] = null;
-                //}
-                //useKey = null;
-
-                for (int i = 0; i < keys.Length; i++)
+                gameCanvas.ImageButtonE();
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (!keys[i]) continue;
-                    if (useKey.name == keys[i].name)
+                    var door = hitDoor.transform.GetComponent<Doors>();
+                    var useKeyType = useKey.GetComponent<Keys>();
+                    if ((int)door.doorLock == (int)useKeyType.keyType) door.DoorColors();
+                    else door.DoorColors(false);
+
+                    for (int i = 0; i < keys.Length; i++)
                     {
-                        
-                        gameCanvas.DropUseItem(i);
-                        Destroy(keys[i]);
+                        if (!keys[i]) continue;
+                        if (useKey.name == keys[i].name)
+                        {
 
+                            gameCanvas.DropUseItem(i);
+                            Destroy(keys[i]);
+
+                        }
                     }
+
+
                 }
-
-
             }
+            else gameCanvas.ImageButtonE(false);
         }
-        else gameCanvas.ImageButtonE(false);
+        
     }
 
     void Inventory()
