@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6372439690199458366}
   - component: {fileID: 6372439690199458361}
   m_Layer: 7
-  m_Name: Player Camera
+  m_Name: CameraPlayer
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 6372439690381941614}
   - component: {fileID: 6372439690381941609}
   - component: {fileID: 6372439690381941613}
-  - component: {fileID: 6372439690381941608}
-  - component: {fileID: 1081754745}
+  - component: {fileID: 2902782873972149864}
+  - component: {fileID: 2036800045397230650}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -190,7 +190,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6372439690381941608
+--- !u!114 &2902782873972149864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,33 +199,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 6372439690381941611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d470ed35fefe5e4db0b37b17e7ef8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
-  speedMouse: 2
---- !u!114 &1081754745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6372439690381941611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33d88d086686aac48908ed243800fc74, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d2133a434c7b634fae6b7c43d80a924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 5
-  keyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  doorLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  gameCanvas: {fileID: 0}
   isInventory: 0
-  keys:
+  takenKeys:
   - {fileID: 0}
   - {fileID: 0}
   useKey: {fileID: 0}
+--- !u!114 &2036800045397230650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372439690381941611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0899a3b4413d72458efade31e32ccb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  speedMouse: 2
+  cameraMinMaxAngle: 30

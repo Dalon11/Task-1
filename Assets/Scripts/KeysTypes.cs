@@ -3,27 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(Renderer))]
-public class Keys : MonoBehaviour
+public class KeysTypes : MonoBehaviour
 {
+    [SerializeField] Texture[] keysTexture = new Texture[3];
+
     public enum KeyType : byte 
     {   
         red, 
         green, 
         blue 
     }
-
     public KeyType keyType;
 
-    public Texture[] keysTexture;
+    #region Awake/Start/Update/FixedUpdate
+    void Awake()
+    {
 
+    }
+    void Start()
+    {
+
+    }
     void Update()
     {
         KeysTexture();
     }
+    void FixedUpdate()
+    {
+
+    }
+    #endregion
 
     void KeysTexture()
     {
-        Material keysMaterial = gameObject.GetComponent<Renderer>().material;
+        var keysMaterial = gameObject.GetComponent<Renderer>().material;
        
         switch (keyType)
         {

@@ -3,40 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(Renderer))]
-public class Doors : MonoBehaviour
+public class DoorsTypes : MonoBehaviour
 {
-    public static int totalGreenDoor =0;
-    public enum  DoorLock : byte 
+    public static int totalGreenDoor = 0;
+
+    public DoorType doorType;
+    Material colorDoor;
+    public enum  DoorType : byte 
     { 
         red, 
         green, 
         blue
     }
 
-    public DoorLock doorLock;
-
-    Material colorDoor;
-
     void Start()
     {
         colorDoor = gameObject.GetComponent<Renderer>().material; 
     }
 
-    public void DoorColors(bool yes = true)
+    public void CorrectDoor(bool correct = true)
     {
-        if (yes)
+        if (correct)
         {
             totalGreenDoor++;
             colorDoor.color = Color.green;
-            GetComponent<Collider>().enabled=false;
+            GetComponent<BoxCollider>().enabled=false;
         }
-        else StartCoroutine(RedDoor());
+        else StartCoroutine(WrongDoor());
     }
-
-    IEnumerator RedDoor()
+    IEnumerator WrongDoor()
     {
         colorDoor.color = Color.red;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         colorDoor.color = Color.white;
     }
 
